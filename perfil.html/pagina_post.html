@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pagina de post:</title>
+    <style>
+      body {
+        background-color: rgb(247, 221, 225);
+      }
+      #sessao-post {
+        background-color: rgb(240, 174, 185);
+        padding: 10px 20px;
+        width: 80%;
+        height: 100vh;
+      }
+      #pagina-post {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    </style>
+    <script type="text/javascript">
+      function criarPost() {
+        let novoPost = document.createElement("div");
+        let tituloPost = document.createElement("h3");
+        let conteudoPost = document.createElement("p");
+        let dataPost = document.createElement("p");
+        let entrada = document.getElementById("entrada");
+        let htmlTitulo = document.getElementById("titulo");
+        tituloPost.innerHTML = htmlTitulo.value;
+        conteudoPost.innerHTML = entrada.value;
+        let data = new Date();
+        dataPost.innerHTML =
+          data.getDate().toString() +
+          "/" +
+          data.getMonth().toString() +
+          "/" +
+          data.getFullYear().toString();
+        novoPost.appendChild(tituloPost);
+        novoPost.appendChild(conteudoPost);
+        novoPost.appendChild(dataPost);
+
+        document.getElementById("lista").appendChild(novoPost);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="pagina-post">
+      <div id="menu">
+        <p><strong>MENU:</strong></p>
+        <a href="perfil.html"><strong>Perfil</strong><br /></a>
+        <a href="./pagina_post.html"><strong>Pagina de post</strong></a>
+      </div>
+      <div id="sessao-post">
+        <h1>Pagina de post:</h1>
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" maxlength="200" /><br />
+        <label for="entrada">Texto:</label>
+        <input type="text" id="entrada" maxlength="200" /><br />
+        <button onClick="criarPost()">Adicionar postagem</button><br />
+        <div>
+          <br />
+          <strong>POSTAGENS:</strong> <br />
+          <div id="lista"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
