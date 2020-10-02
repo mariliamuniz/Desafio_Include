@@ -17,6 +17,10 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        font-family: Arial;
+      }
+      #quadro-menu {
+        font-family: Arial;
       }
     </style>
     <script type="text/javascript">
@@ -33,7 +37,7 @@
         dataPost.innerHTML =
           data.getDate().toString() +
           "/" +
-          data.getMonth().toString() +
+          parseInt(data.getMonth() + 1).toString() +
           "/" +
           data.getFullYear().toString();
         novoPost.appendChild(tituloPost);
@@ -46,7 +50,7 @@
   </head>
   <body>
     <div id="pagina-post">
-      <div id="menu">
+      <div id="quadro-menu">
         <p><strong>MENU:</strong></p>
         <a href="perfil.html"><strong>Perfil</strong><br /></a>
         <a href="./pagina_post.html"><strong>Pagina de post</strong></a>
